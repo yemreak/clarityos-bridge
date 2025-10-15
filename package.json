@@ -1,0 +1,56 @@
+{
+	"name": "clarityos-bridge",
+	"displayName": "ClarityOS Bridge",
+	"description": "TCP server bridge for CLI → VSCode API communication",
+	"version": "0.1.0",
+	"publisher": "yemreak",
+	"engines": {
+		"vscode": "^1.99.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"bridge",
+		"tcp",
+		"server",
+		"cli",
+		"api"
+	],
+	"icon": "icon.png",
+	"main": "./out/extension.js",
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "clarityos.bridge.start",
+				"title": "ClarityOS: Start Bridge Server"
+			},
+			{
+				"command": "clarityos.bridge.stop",
+				"title": "ClarityOS: Stop Bridge Server"
+			}
+		]
+	},
+	"scripts": {
+		"compile": "node esbuild.js --production",
+		"watch": "node esbuild.js --watch",
+		"package": "node esbuild.js --production && bunx vsce package"
+	},
+	"devDependencies": {
+		"@types/node": "^20.19.19",
+		"@types/vscode": "1.99.0",
+		"esbuild": "^0.25.10",
+		"typescript": "^5.9.3"
+	},
+	"author": "yemreak",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yemreak/mind.git",
+		"directory": "src/interface/vscode/clarityos-bridge"
+	},
+	"type": "commonjs"
+}
